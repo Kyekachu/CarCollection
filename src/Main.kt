@@ -72,7 +72,7 @@ fun main() {
             }
 
             "5" -> {
-                println("Reading from file...")
+                println("Reading from file...\n")
                 var carsFromFile: MutableList<Car> = ArrayList() // empty ArrayList object
                 try {
                     val fileIn = FileInputStream("Cars.dat")
