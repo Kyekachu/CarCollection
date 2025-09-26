@@ -1,4 +1,6 @@
-class Car {
+import java.io.Serializable
+
+class Car : Serializable {
     var make: String
     var model: String? = null
     var year: String? = null

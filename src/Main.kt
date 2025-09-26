@@ -1,7 +1,6 @@
-import jdk.internal.org.jline.keymap.KeyMap.display
+import java.io.*
+import java.io.Serializable
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
     val Car1 = Car("Toyota", "Carolla", "1966", 0 )
     val Car2 = Car("Ford", "Falcon", "2016", 0 )
@@ -59,7 +58,16 @@ fun main() {
                 }
             }
             "4" -> {
-
+                println("Writing to file...")
+                try {
+                    val fileOut = FileOutputStream("Cars.bin")
+                    val objectOut = ObjectOutputStream(fileOut)
+                    objectOut.writeObject(Cars)
+                    fileOut.close()
+                    println("Completed - Cars.bin")
+                } catch (e: IOException) {
+                    println(e)
+                }
             }
 
             "5" -> {
