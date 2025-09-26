@@ -71,7 +71,23 @@ fun main() {
             }
 
             "5" -> {
-
+                println("Reading from file...")
+                var carsFromFile: MutableList<Car> = ArrayList() // empty ArrayList object
+                try {
+                    val fileIn = FileInputStream("Cars.bin")
+                    val objectIn = ObjectInputStream(fileIn)
+                    val readList = objectIn.readObject() as List<*>
+                    carsFromFile = readList.filterIsInstance<Car>().toMutableList()
+                    fileIn.close()
+                } catch (err: IOException) {
+                    System.err.println(err)
+                } catch (err: ClassNotFoundException) {
+                    System.err.println(err)
+                }
+                carsFromFile.forEach {
+                    it.display()
+                    println("___________________")
+                }
             }
 
             "6" -> {
