@@ -57,6 +57,7 @@ fun main() {
                     )
                 }
             }
+
             "4" -> {
                 println("Writing to file...")
                 try {
