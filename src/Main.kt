@@ -61,11 +61,11 @@ fun main() {
             "4" -> {
                 println("Writing to file...")
                 try {
-                    val fileOut = FileOutputStream("Cars.bin")
+                    val fileOut = FileOutputStream("Cars.dat")
                     val objectOut = ObjectOutputStream(fileOut)
                     objectOut.writeObject(Cars)
                     fileOut.close()
-                    println("Completed - Cars.bin")
+                    println("Completed - Cars.dat")
                 } catch (e: IOException) {
                     println(e)
                 }
@@ -75,7 +75,7 @@ fun main() {
                 println("Reading from file...")
                 var carsFromFile: MutableList<Car> = ArrayList() // empty ArrayList object
                 try {
-                    val fileIn = FileInputStream("Cars.bin")
+                    val fileIn = FileInputStream("Cars.dat")
                     val objectIn = ObjectInputStream(fileIn)
                     val readList = objectIn.readObject() as List<*>
                     carsFromFile = readList.filterIsInstance<Car>().toMutableList()
