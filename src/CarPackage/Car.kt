@@ -1,3 +1,5 @@
+package CarPackage
+
 import java.io.Serializable
 
 class Car : Serializable {

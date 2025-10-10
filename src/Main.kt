@@ -1,11 +1,12 @@
+import CarPackage.Car
 import java.io.*
 import java.io.Serializable
 
 fun main() {
-    val Car1 = Car("Toyota", "Carolla", "1966", 0 )
-    val Car2 = Car("Ford", "Falcon", "2016", 0 )
-    val Car3 = Car("Ford", "GT", "2005", 0 )
-    val Car4 = Car("Honda", "Civic", "2022", 0 )
+    val Car1 = Car("Toyota", "Carolla", "1966", 0)
+    val Car2 = Car("Ford", "Falcon", "2016", 0)
+    val Car3 = Car("Ford", "GT", "2005", 0)
+    val Car4 = Car("Honda", "Civic", "2022", 0)
 
     val Cars = listOf(Car1, Car2, Car3, Car4)
 
